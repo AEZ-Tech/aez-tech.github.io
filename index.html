@@ -177,7 +177,18 @@ Link style.css file , html file and php file in php file . <br/>
      </p>
      <p><a class="link " href="https://www.youtube.com/watch?v=okR-bNZc1AE" target="blank">Watch video on YouTube&#8230;</a></p>
     </div></div>
-    
+<!-- Back To Top -->
+	<style>html{scroll-behavior: smooth;}                  
+#BackToTop {position: fixed;bottom: 105px;right: 10px;display: none;height: 45px;
+        width: 28px;background: url(https://aez-tech.site/content/TOP.gif) no-repeat;
+        cursor: pointer;z-index: 1000;border-radius: 20%;}</style>
+
+<a id="BackToTop" title="Back To Top" href="#"></a>
+
+<script>let TOP =document.getElementById("BackToTop");window.onscroll=function(){
+        if(document.body.scrollTop >20 || document.documentElement.scrollTop >20){
+            TOP.style.display="block";}else{TOP.style.display="none";}}</script>
+
    <!-- Footer section -->
     <footer class="footer"> 
         <div class="footer-content text-center"> 
