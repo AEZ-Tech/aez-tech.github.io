@@ -1,0 +1,313 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport"content="width=device-width, initial-scale=1.0"> 
+        <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+        <meta name="keywords" content="WordPress, Javascript, Front-end, Plugin, Full Stack, Excel, HTML, CSS, How to, PHP,  Code Game, Tutorials, Programming, Web Development, Training,  Learning, Quiz, Exercises, Courses, Lessons, References, Examples,  Learn to code, Source code, Demos, Tips, Website" />
+		<meta name="fediverse:creator" content="@aez_tech@mastodon.social" />
+		<link rel="me" href="https://mastodon.social/@aez_tech"/>
+        <meta name="publisher" content="AEZ-Tech" />
+        <!---->
+    <title>How to Create a Simple WordPress Plugin | AEZ-Tech</title>
+    <meta name="description" content='Creating a Simple WordPress Plugin to display "Hello World!"
+     on the frontend and has an admin page.' />
+	<link rel="canonical" href="https://aez-tech.site/how-to-create-wordpress-plugin/" />
+	
+    <meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="How to Create a Simple WordPress Plugin" />
+	<meta property="og:description" content='Creating a Simple WordPress Plugin to display
+     "Hello World!" on the frontend and has an admin page.' />
+	<meta property="og:url" content="https://aez-tech.site/how-to-create-wordpress-plugin/" />
+	<meta property="og:site_name" content="AEZ-Tech" />
+
+     <!---->
+    <link rel="icon" type="image/x-icon" href="https://aez-tech.site/favicon.ico" />
+    <link rel="icon" href="https://aez-tech.site/aez.webp" sizes="32x32" />
+<link rel="icon" href="https://aez-tech.site/aez.webp" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://aez-tech.site/aez.webp" />
+<meta name="msapplication-TileImage" content="https://aez-tech.site/aez.webp" />
+
+    <link rel="stylesheet" href= "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity= "sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" /> 
+  
+    <link rel="stylesheet" href="https://aez-tech.site/style.css"> 
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7604748728419561"
+     crossorigin="anonymous"></script>
+    
+    </head> 
+
+<body> 
+    <!-- Navbar header section -->
+    <header class="header"> 
+        <nav class="navbar"> 
+            <div class="logo"> 
+                <a href="https://aez-tech.site"> 
+                   <img class="logo-heading" src="https://aez-tech.site/aez.webp" alt="aez-logo">        
+                        </a> 
+            </div> 
+            <div class="hamburger" id="hamburger"> 
+                <i class="fas fa-bars hamburger-icon"></i> 
+                <i class="fas fa-times cross-icon"></i> 
+            </div> 
+            <div class="menu"> 
+                <ul class="menu-list"> 
+					<li class="menu-list-items"> 
+                        <a class="links" href="https://aez-tech.site"> 
+                            Home 
+                        </a> 
+                    </li> 
+					<li class="menu-list-items"> 
+                        <a class="links" href="https://aez-tech.site/php-tutorials/"> 
+                            PHP Tutorials 
+                        </a> 
+                    </li> 
+                    
+                    <li class="menu-list-items"> 
+                        <a class="links" href="#social-media"> 
+                            Social Media 
+                        </a> 
+                    </li> 
+                    
+                </ul> 
+            </div> 
+        </nav> 
+    </header> 
+
+    <!-- start -->  
+
+    <h1> 
+        How to Create a Simple WordPress Plugin
+    </h1> 
+
+    <!--1--> 
+    <div class="main">
+   <h2>
+   Description 
+   </h2>   
+   <div class="sub">  <p>
+    Creating a Simple WordPress Plugin to display "Hello World!" </br>
+    on the frontend and has an admin page. </br>
+
+    The WordPress version used in this tutorial is 6.4.1 .</br>
+The PHP version used in this example is 8.4.5 .
+</p>       
+        </div></div>
+        <!--2-->
+            
+     <div class="main">
+        
+        <div >
+        <style>
+            .block{
+                width: 90%;margin: auto;
+            }
+        .fs{
+                font-size: 1.3em ;
+            }
+            pre {
+                
+                background-color: #f4f4f4;
+                border: 1px solid #310ed1;
+                padding-left: 20px;
+                font-family: monospace;
+                white-space: pre-line;
+                text-align: left;
+                
+            }
+            pre {
+                    font-size:20px !important;
+                }
+
+            @media screen and (max-width: 820px) { 
+                pre {
+                    font-size:20px !important;
+                }
+            }
+            
+            @media screen and (min-width: 576px) and (max-width: 820px) { 
+                pre {
+                    font-size:20px !important;
+                }
+            }
+            
+            @media screen and (min-width: 280px) and (max-width: 576px) { 
+                pre {
+                   font-size:13px !important;
+                }
+            }
+            
+            .black{
+                color:rgb(11, 11, 11);
+            }
+            .blue{
+                color:rgb(24, 21, 231);
+            }
+            .orange{
+                color:rgb(214, 121, 22);
+            }
+            .green{
+                color:rgb(19, 163, 12);
+            }
+            .red{
+                color:rgb(248, 39, 39);
+            }
+            </style>    
+            
+             <div class="block">
+                
+                <h2 class="fs">Code </h2>
+                <pre ><code >
+                    <span class="red">&lt;?php</span>            
+                    <span class="green">/**</span> 
+                    <span class="green"> * Plugin Name: Simple Plugin by AEZ-Tech</span> 
+                    <span class="green"> * Plugin URI: https://www.aez-tech.site/how-to-create-wordpress-plugin/</span> 
+                    <span class="green"> * Description: Creating a Simple WordPress Plugin to display "Hello World!" on the frontend and has an admin page.</span> 
+                    <span class="green"> * Version: 1.0.0</span> 
+                    <span class="green"> * Author: AEZ-Tech</span> 
+                    <span class="green"> * Author URI: https://www.aez-tech.site</span> 
+                    <span class="green">*/</span> 
+                    
+                    <span class="green">// Prevent direct access to the file</span> 
+                    <span class="blue">if ( ! defined( 'ABSPATH' ) ) {</span> 
+                    <span class="black">exit;}</span> 
+                    
+                    <span class="green">// Displays "Hello World!" at the end of the content.</span> 
+                    <span class="orange">function AEZ_hello_world_display() {</span> 
+                    <span class="blue">echo '&lt;p style="text-align: center; color: green; font-weight: bold;font-size: 30px;"&gt;</span>     
+                    <span class="black">Hello World&lt;br/&gt;Simple Plugin by AEZ-Tech&lt;/p&gt;;}</span>
+                    
+                    <span class="red">add_action( 'wp_footer', 'AEZ_hello_world_display' );</span>
+                    <span class="red">add_action( 'wp_body_open', 'AEZ_hello_world_display');</span>
+                    
+                    <span class="green">// Add a new top-level admin menu page.</span>
+                    <span class="orange">function AEZ_hello_world_admin_menu() {</span>
+                    <span class="blue">add_menu_page(</span>
+                    <span class="black">'Simple Plugin',</span><span class="green">     // Page title</span>
+                    <span class="blue"> 'Simple Plugin',</span><span class="green">    // Menu title</span>
+                    <span class="black">'manage_options',</span><span class="green">    // Capability required to access</span>
+                    <span class="blue">'Simple-Plugin-by-AEZ-Tech', </span><span class="green">     // Menu slug (unique identifier)</span>
+                    <span class="black">'AEZ_hello_world_settings_page_content', </span><span class="green">     // Function to render the page content</span>
+                    <span class="blue">'dashicons-smiley'</span><span class="green">// Icon URL or Dashicons class</span>
+                    <span class="black"> );}</span>
+                    
+                    <span class="red">add_action( 'admin_menu', 'AEZ_hello_world_admin_menu' );</span>
+                    
+                    <span class="green">// Render the content of the admin settings page.</span>
+                    <span class="orange">function AEZ_hello_world_settings_page_content() {</span>
+                    <span class="red">?&gt;</span>
+                    <span class="blue">&lt;div class="wrap"&gt;</span>
+                    <span class="black">&lt;h1&gt;Simple Plugin Settings&lt;/h1&gt;</span>
+                    <span class="blue">&lt;p style="text-align: center; color: blue; font-weight: bold; font-size: 30px;"&gt; </span>
+                    <span class="black">Hello World &lt;br/&gt; Simple Plugin by AEZ-Tech&lt;/p&gt;</span>
+                    <span class="blue">&lt;/div&gt;</span>
+                    <span class="red">&lt;?php</span>
+                    <span class="black">}</span>
+                    
+                    </code></pre>
+                            
+        </div>
+        <h2>Video </h2>
+       
+<p><a class="link " href="https://www.youtube.com/watch?v=oPN0e0ltRI4" target="blank">Watch video on YouTube&#8230;</a></p>
+
+        </div></div>
+     
+         <!--3--> 
+<div class="main">
+    <div class="sub">
+     
+     <p class="left-text ">Previous : <a class="link link-nav " href="https://aez-tech.site/null-coalescing-operator-php-tutorials">
+        Null Coalescing Operator ( ?? ) - PHP &#8230;</a></p>
+     <p class="left-text ">Next : <a class="link link-nav " href="https://aez-tech.site/network-data-hosting-server-php">
+        Network data on the hosting server - PHP &#8230;</a></p>
+    </div></div>
+
+      <!-- Back To Top -->
+
+<style>html{scroll-behavior: smooth;} 
+    #BackToTop {text-align: center;position: fixed;bottom: 105px;right: 35px;display: none;
+    height: 35px;width: 28px;cursor: pointer;z-index: 1000;border-radius: 20%;font-size: 23px;
+    font-weight: bolder;border: solid #3405cc 3px;color: rgb(22, 5, 149);
+    background-color:  #ffffff;} #BackToTop:hover{font-size: 27px;border: solid #05b814 3px;}  
+    </style>
+    
+    <a id="BackToTop" title="Back To Top" href="#">^</a>
+    
+    <script>let TOP =document.getElementById("BackToTop");window.onscroll=function(){
+            if(document.body.scrollTop >20 || document.documentElement.scrollTop >20){
+                TOP.style.display="block";}else{TOP.style.display="none";}}</script>
+        
+   <!-- Footer section -->
+    <footer class="footer"> 
+        <div class="footer-content text-center"> 
+            <h2> <a class="links" href="https://aez-tech.site"> 
+             AEZ-Tech </a></h2>
+        <p>Contact : info@aez-tech.site</p>
+            <p>
+                © 2024 - 2025 All rights reserved 
+            </p> 
+            <div class="social-links" id="social-media"> 
+                <div class="footer-menu"> 
+                    <ul class="footer-menu-list"> 
+                        <li class="footer-list-items"> 
+                            <a class="footer-links" href="https://www.youtube.com/channel/UCyZ7wfGT6EN3Wx7XgJ6Ok4w" target="blank"> 
+                                <i class="fab fa-youtube"></i> 
+                            </a> 
+                        </li> 
+                        <li class="footer-list-items"> 
+                            <a class="footer-links" href="https://www.linkedin.com/in/aez-tech" target="blank"> 
+                                <i class="fab fa-linkedin-in"></i> 
+                            </a> 
+                        </li> 
+                    
+                        
+                        <li class="footer-list-items"> 
+                            <a class="footer-links" href="https://www.tiktok.com/@aez.tech" target="blank"> 
+                                <i class="fab fa-tiktok"></i> 
+                            </a> 
+                        </li> 
+                        <li class="footer-list-items"> 
+                            <a class="footer-links" href="https://www.facebook.com/profile.php?id=61563444746098" target="blank"> 
+                                <i class="fab fa-facebook-f"></i> 
+                            </a> 
+                        </li> 
+                        
+                        <li class="footer-list-items"> 
+                            <a class="footer-links" href="https://www.instagram.com/aez_tech" target="blank"> 
+                                <i class="fab fa-instagram"></i> 
+                            </a> 
+                        </li> 
+                        
+                        <li class="footer-list-items"> 
+                            <a class="footer-links" href="https://mastodon.social/@aez_tech" target="blank"> 
+                                <i class="fab fa-mastodon"></i> 
+                            </a> 
+                        </li>
+                    
+                        <li class="footer-list-items"> 
+                            <a class="footer-links" href="https://vimeo.com/aeztech" target="blank"> 
+                                <i class="fab fa-vimeo"></i> 
+                            </a> 
+                        </li> 
+                    </ul> 
+                </div> 
+            </div> <a class="links" href="https://aez-tech.site/privacy-policy/" >Privacy policy </a>
+        </div> 
+    </footer> 
+
+    
+    <script src= 
+    "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"
+            integrity= 
+    "sha512-uKQ39gEGiyUJl4AI6L+ekBdGKpGw4xJ55+xyJG7YFlJokPNYegn9KwQ3P8A7aFQAUtUsAQHep+d/lrGqrbPIDQ=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"> 
+        </script> 
+        
+        <script src="https://aez-tech.site/script.js"></script> 
+    </body> 
+    
+    </html>
