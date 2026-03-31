@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://aez-tech.site</loc>
+    <loc>https://aez-tech.site/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -61,7 +61,7 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://aez-tech.site/web-development/</loc>
+    <loc>https://aez-tech.site/website-design-eg-ar/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
