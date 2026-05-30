@@ -6,7 +6,7 @@ Disallow:
 User-agent: Googlebot
 Disallow:
 
-Sitemap: https://aez-tech.site/sitemap.xml
+Sitemap: https://aez-tech.online/sitemap.xml
 
 # ---------------------------
 
