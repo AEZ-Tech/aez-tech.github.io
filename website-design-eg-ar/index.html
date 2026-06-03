@@ -58,7 +58,7 @@
                         </a> 
                     </li> 
                     <li class="menu-list-items"> 
-                        <a class="links" href="https://aez-tech.online/website-design-eg-ar/"> 
+                        <a class="links" href="https://aez-tech.online/website-design-eg-en/"> 
                             Website Design  
                         </a> 
                     </li> 
@@ -120,6 +120,13 @@
                 font-weight: bolder;                
                 text-shadow: 0px 2px 10px #000;
             }
+		.lang-link {text-align: center;position: fixed;right: 35px;display: block;
+    height: 35px;width: 28px;cursor: pointer;z-index: 1000;border-radius: 20%;font-size: 23px;
+    font-weight: bolder;border: solid #3405cc 3px;color: rgb(22, 5, 149);
+    background-color:  #ffffff; text-decoration: none;} 
+    .lang-link:hover{font-size: 27px;border: solid #05b814 3px;}  
+          </style>
+          <a id="lang" class="lang-link" title="English" href="https://aez-tech.online/website-design-eg-en/">EN</a>
 
           </style>
           <div class="hero-section-design-web">
@@ -145,9 +152,13 @@ loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     
     <a id="BackToTop" title="Back To Top" href="#">^</a>
     
-    <script>let TOP =document.getElementById("BackToTop");window.onscroll=function(){
+    <script>let TOP =document.getElementById("BackToTop");let lang =document.getElementById("lang");
+    window.onscroll=function(){
             if(document.body.scrollTop >20 || document.documentElement.scrollTop >20){
-                TOP.style.display="block";}else{TOP.style.display="none";}}</script>
+                TOP.style.display="block";lang.style.display="none";
+                }else{
+				TOP.style.display="none";lang.style.display="block";
+                }}</script>
         
    <!-- Footer section -->
     <footer class="footer"> 
