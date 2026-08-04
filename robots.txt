@@ -1,9 +1,6 @@
 
 # ---------------------------
 
-User-agent: Googlebot
-Disallow:
-
 Sitemap: https://aez-tech.online/sitemap.xml
 
 # ---------------------------
