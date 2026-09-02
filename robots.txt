@@ -1,5 +1,7 @@
 
 # ---------------------------
+User-agent: *
+Disallow: /
 
 Sitemap: https://aez-tech.online/sitemap.xml
 
