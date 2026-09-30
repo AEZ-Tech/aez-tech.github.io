@@ -37,6 +37,9 @@ Disallow: /
 User-agent: meta-externalagent
 Disallow: /
 
+User-agent: PetalBot
+Disallow: 
+
 User-agent: *
 Disallow: /
 
